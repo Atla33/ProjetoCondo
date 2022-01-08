@@ -18,6 +18,7 @@ public class Main {
         boolean entrou = false;
 
         ArrayList<Morador> morador = new ArrayList<Morador>();
+        morador.add(new Morador("enzo","enzo.danjour@gmail.com","27/05/1999","123456",89));
         ArrayList<Eventos> eventos = new ArrayList<Eventos>();
 
         do {
@@ -29,6 +30,7 @@ public class Main {
 
                     System.out.println("Digite o seu nome: ");
                     String nome = teclado.nextLine();
+                    teclado.nextLine();
 
                     System.out.println("Digite o número da sua casa: ");
                     int Casa = teclado.nextInt();
@@ -155,7 +157,7 @@ public class Main {
                                                 do {
 
                                                     System.out.println("\n\t ---  QUAL ARQUVO DESEJA  ---  ");
-                                                    System.out.println("\t1 - 1ª VIA DO CONDOMNIO");
+                                                    System.out.println("\t1 - 1ª VIA DO CONDOMINIO");
                                                     System.out.println("\t2 - 2ª VIA DO CONDOMINIO");
                                                     System.out.println("\t3 - 1ª VIA DO GÁS");
                                                     System.out.println("\t4 - SAIR");
