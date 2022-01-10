@@ -1,0 +1,34 @@
+package Persistencia;
+
+import Dominio.NovissimaPessoa;
+import Dominio.Pessoa;
+
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class UsuarioDAO {
+    private Conexao conexaoDb = new Conexao();
+
+
+
+    public ArrayList<NovissimaPessoa> buscarPessoas(){
+        ArrayList lista = new ArrayList();
+        try {
+            this.conexaoDb.conectar();
+            Statement instrucao = this.conexaoDb.getConexao().createStatement();
+            ResultSet rs = instrucao.executeQuery("select * from  \"Pessoa\" ");
+
+
+            while (rs.next()){
+                NovissimaPessoa p = new NovissimaPessoa(rs.getInt("id_usuario"),rs.getInt("casa"),rs.getTimestamp("data_nascimento"),rs.getString("nome"),rs.getString("email"),rs.getTimestamp("criadoEm"));
+                lista.add(p);
+            }
+        }catch (SQLException error){
+            System.out.println(error.getMessage());
+        }
+        this.conexaoDb.desconectar();
+        return lista;
+    }
+}
