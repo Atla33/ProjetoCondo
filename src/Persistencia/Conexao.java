@@ -11,9 +11,9 @@ import java.sql.DriverManager;
         private Connection aPropriaConexao;
 
         public Conexao(){
-            caminho = "jdbc:postgresql://localhost:5432/BDcondo";
-            usuario = "postgres";
-            senha = "Atla123@";
+            caminho = "jdbc:postgresql://localhost:5432/d5ja9ksq21oc9f";
+            usuario = "nnrlslfnqpuvlb";
+            senha = "bd5ab46aa4df38f35676056c5d9e8273636de623e2744e2062fa8c110be0f0fa";
         }
 
         public Conexao(String c, String u, String s){
