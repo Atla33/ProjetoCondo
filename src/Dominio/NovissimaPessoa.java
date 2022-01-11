@@ -8,6 +8,7 @@ public class NovissimaPessoa {
     private Timestamp data_nascimento;
     private String nome;
     private String email;
+    private Timestamp criado_em;
 
     public NovissimaPessoa(){
 
@@ -69,6 +70,6 @@ public class NovissimaPessoa {
         this.criado_em = criado_em;
     }
 
-    private Timestamp criado_em;
+
 
 }

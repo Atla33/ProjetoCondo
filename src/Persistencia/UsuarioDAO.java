@@ -4,6 +4,7 @@ import Dominio.NovissimaPessoa;
 import Dominio.Pessoa;
 
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -30,5 +31,22 @@ public class UsuarioDAO {
         }
         this.conexaoDb.desconectar();
         return lista;
+    }
+    
+    public NovissimaPessoa buscarPessoaPorCasa(int casa){
+        NovissimaPessoa p = null;
+        try{
+            this.conexaoDb.conectar();
+            PreparedStatement instrucao = this.conexaoDb.getConexao().prepareStatement("select * from \"pessoa\" where \"casa\"=?");
+            instrucao.setInt(1,casa);
+            ResultSet rs = instrucao.executeQuery();
+            while (rs.next()){
+                 p = new NovissimaPessoa(rs.getInt("id_usuario"),rs.getInt("casa"),rs.getTimestamp("data_nascimento"),rs.getString("nome"),rs.getString("email"),rs.getTimestamp("criadoEm"));
+            }
+            this.conexaoDb.desconectar();
+        } catch (SQLException exc){
+            System.out.println(exc.getMessage());
+        }
+        return p;
     }
 }
