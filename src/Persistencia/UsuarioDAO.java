@@ -12,8 +12,6 @@ import java.util.ArrayList;
 public class UsuarioDAO {
     private Conexao conexaoDb = new Conexao();
 
-
-
     public ArrayList<NovissimaPessoa> buscarPessoas(){
         ArrayList lista = new ArrayList();
         try {

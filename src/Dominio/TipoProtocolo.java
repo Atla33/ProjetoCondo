@@ -1,2 +1,5 @@
-package Dominio;public enum TipoProtocolo {
+package Dominio;
+
+public enum TipoProtocolo {
+    EXTENSIVO,PRIVATIVO,CONFIDENCIAL
 }
