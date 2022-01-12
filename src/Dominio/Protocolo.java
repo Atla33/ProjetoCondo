@@ -5,12 +5,12 @@ import java.sql.Timestamp;
 public class Protocolo {
     private int id_protocolo;
     private int id_usuario;
-    private TipoProtocolo tipo_protocolo;
+    private String tipo_protocolo;
     private Timestamp criado_em;
     private String descricao;
     private boolean assinado;
 
-    public Protocolo(int id_protocolo, int id_usuario, TipoProtocolo tipo_protocolo, Timestamp criado_em, String descricao, boolean assinado) {
+    public Protocolo(int id_protocolo, int id_usuario, String tipo_protocolo, Timestamp criado_em, String descricao, boolean assinado) {
         this.id_protocolo = id_protocolo;
         this.id_usuario = id_usuario;
         this.tipo_protocolo = tipo_protocolo;
@@ -35,11 +35,11 @@ public class Protocolo {
         this.id_usuario = id_usuario;
     }
 
-    public TipoProtocolo getTipo_protocolo() {
+    public String getTipo_protocolo() {
         return tipo_protocolo;
     }
 
-    public void setTipo_protocolo(TipoProtocolo tipo_protocolo) {
+    public void setTipo_protocolo(String tipo_protocolo) {
         this.tipo_protocolo = tipo_protocolo;
     }
 
